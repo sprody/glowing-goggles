@@ -9,8 +9,6 @@ class Set(object):
     def insert(self, e):
         if e not in self.set:
             self.set.append(e)
-        else:
-            print "Error: %d already in set" % e
 
     def member(self, e):
         if e in self.set:
