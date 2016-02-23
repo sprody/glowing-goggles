@@ -4,29 +4,26 @@ class Set(object):
 
     def __str__(self):
         self.set.sort()
-        return '{' + ','.join([str(e) for e in self.set]) + '}'
+        return '{' + ', '.join([str(e) for e in self.set]) + '}'
 
     def insert(self, e):
         if e not in self.set:
             self.set.append(e)
 
     def member(self, e):
-        if e in self.set:
-            return True
-        else:
-            return False
+        return e in self.vals
 
     def remove(self, e):
-        if self.member(e):
+        try:
             self.set.remove(e)
-        else:
-            print 'Error: %d not in set' % e
+        except:
+            raise ValueError(str(e) + ' not found')
 
 a = Set()
-a.insert(10)
-a.insert(11)
-a.insert(12)
+a.insert(0)
+a.insert(1)
+a.insert(2)
 print a
-a.remove(10)
-print a
+a.remove(3)
+
 
