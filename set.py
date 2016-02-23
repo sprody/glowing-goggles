@@ -3,7 +3,8 @@ class Set(object):
         self.set = []
 
     def __str__(self):
-        return str(self.set)
+        self.set.sort()
+        return '{' + ','.join([str(e) for e in self.set]) + '}'
 
     def insert(self, e):
         if e not in self.set:
@@ -25,7 +26,8 @@ class Set(object):
 
 a = Set()
 a.insert(10)
-a.insert(10)
+a.insert(11)
+a.insert(12)
 print a
 a.remove(10)
 print a
